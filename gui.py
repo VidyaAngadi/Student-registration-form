@@ -1,0 +1,45 @@
+from tkinter import *
+root=Tk()
+fo=open('Database.csv','a+')
+def display():
+    fo.write('\nStudent name:'+e1.get())
+    fo.write('\nEmail id:'+e2.get())
+    fo.write('\nBranch:'+e3.get())
+    fo.write('\nClass:'+e4.get())
+    fo.write('\nGender:'+e5.get())
+    fo.write('\nAge:'+e6.get())
+    fo.write('\nFees:'+e7.get())
+    print("Save")
+
+Label(root,text="Student Registration Form",width=20,font=("bold", 20)).grid(row=0)
+Label(root,text="Student name",width=20,font=("bold", 10)).grid(row=2,column=0)
+Label(root,text="Email id",width=20,font=("bold", 10)).grid(row=4,column=0)
+Label(root,text="Branch",width=20,font=("bold", 10)).grid(row=6,column=0)
+Label(root,text="Class",width=20,font=("bold", 10)).grid(row=8,column=0)
+Label(root,text="Gender",width=20,font=("bold", 10)).grid(row=10,column=0)
+Label(root,text="Age",width=20,font=("bold", 10)).grid(row=12,column=0)
+Label(root,text="Fees",width=20,font=("bold", 10)).grid(row=14,column=0)
+
+e1=Entry(root)
+e2=Entry(root)
+e3=Entry(root)
+e4=Entry(root)
+e5=Entry(root)
+e6=Entry(root)
+e7=Entry(root)
+b1=Button(root,text='SAVE',fg='blue',command=display)
+
+e1.grid(row=2,column=1)
+e2.grid(row=4,column=1)
+e3.grid(row=6,column=1)
+e4.grid(row=8,column=1)
+e5.grid(row=10,column=1)
+e6.grid(row=12,column=1)
+e7.grid(row=14,column=1)
+b1.grid(row=16)
+
+root.mainloop()
+fo.close()
+
+import os
+print(os.getcwd())
